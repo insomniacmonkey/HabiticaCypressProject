@@ -11,8 +11,14 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
+Cypress.Commands.add('login', (username, password) => {
+    cy.visit('')
+    cy.contains('Login').click()
+    cy.url().should('include', '/login')
+    cy.get('#usernameInput').click().type(username)
+    cy.get('#passwordInput').click().type(password)
+    cy.get('[class="btn btn-info"]').click()
+})
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
 //
@@ -23,3 +29,4 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
