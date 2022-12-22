@@ -19,6 +19,10 @@ Cypress.Commands.add('login', (username, password) => {
     cy.get('#passwordInput').click().type(password)
     cy.get('[class="btn btn-info"]').click()
 })
+
+Cypress.Commands.add('welcomeBack', () => {
+    cy.get('#yesterdaily___BV_modal_body_').find('[class="task-control daily-todo-control task-neutral-control-inner-daily-todo"]').click()
+})
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
 //
