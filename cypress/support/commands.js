@@ -20,6 +20,7 @@ Cypress.Commands.add('login', (username, password) => {
     cy.get('[class="btn btn-info"]').click()
 })
 
+// TODO: Rewrite this to check for multiple and to check them all off. 
 Cypress.Commands.add('welcomeBack', () => {
     cy.get('#yesterdaily___BV_modal_body_').find('[class="task-control daily-todo-control task-neutral-control-inner-daily-todo"]').click()
 })
